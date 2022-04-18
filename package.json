@@ -1,0 +1,15 @@
+{
+  "name": "ch-server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "TotallyNotElite",
+  "license": "AGPLv3",
+  "private": true,
+  "dependencies": {
+    "bottleneck": "^2.19.5",
+    "command-line-args": "^5.1.1",
+    "express": "^4.17.1",
+    "express-ws": "^4.0.0",
+    "ip": "^1.1.5"
+  }
+}
