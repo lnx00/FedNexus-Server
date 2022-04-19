@@ -1,6 +1,6 @@
 var lib = require("./lib.js");
 const settings = require("./settings.js");
-
+//.
 module.exports = handleConnection;
 
 // Handle the player connecting to a TF2 server
