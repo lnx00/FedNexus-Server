@@ -1,6 +1,6 @@
 var lib = require("./lib.js");
 const settings = require("./settings.js");
-//.
+
 module.exports = handleConnection;
 
 // Handle the player connecting to a TF2 server
@@ -76,7 +76,7 @@ function onMessage(client, msg) {
                 if (typeof obj.data.server == "object") {
                     if (obj.data.server.connected) {
                         if (settings.Verbose) {
-                            console.log("[DataUpdate] Server will be changed to: " + obj.data.server.ip + ":" + obj.data.server.port);
+                            console.log("[DataUpdate] A client connected to " + obj.data.server.ip + ":" + obj.data.server.port);
                         }
 
                         lib.setServer(client, obj.data.server.ip, obj.data.server.port, obj.data.server.steamid);
@@ -84,7 +84,7 @@ function onMessage(client, msg) {
                     }
                     else {
                         if (settings.Verbose) {
-                            console.log("[DataUpdate] Server will be changed to: null");
+                            console.log("[DataUpdate] A client disconnect from a server");
                         }
 
                         lib.setServer(client);

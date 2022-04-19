@@ -11,7 +11,7 @@ const connectionlimit_group = settings.enforce_limits ? new Bottleneck.Group({ m
 
 const clientlist = require("./clientlist.js");
 
-app.get('/', (req, res) => res.send('Direct connections to FedNexus are currently not supported!'));
+app.get('/', (req, res) => res.send('Direct connections to NullNexus are currently not supported!'));
 
 if (settings.enforce_limits)
     app.use("/api/v1", async function (req, res, next) {
@@ -27,7 +27,7 @@ if (settings.enable_endpoint_proxy)
     // Endpoint for proxies to connect to this nullnexus instance
     app.ws('/api/v1/proxy', require("./botproxy.js")(connectionlimit_group, require("./v1.js")));
 
-app.listen(settings.LISTEN, () => console.log(`FedNexus listening on ${settings.LISTEN}!`));
+app.listen(settings.LISTEN, () => console.log(`NullNexus listening on ${settings.LISTEN}!`));
 
 setInterval(function ping() {
     expressWs.getWss().clients.forEach(function each(ws) {
